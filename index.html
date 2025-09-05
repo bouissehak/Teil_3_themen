@@ -79,6 +79,14 @@
     .highlight{display:inline-flex;align-items:center;gap:6px;margin-inline-end:8px}
 
     footer{margin:40px 0 60px;color:#9aa2b2;font-size:12px;text-align:center}
+    
+    .card h3,
+.card .tags,
+.card .note {
+  direction: rtl;
+  text-align: left;
+}
+
   </style>
 </head>
 <body>
@@ -86,7 +94,7 @@
     <div class="container">
       <div class="brand">
         <h1>📚 Themen Navigator – تنظيم المواضيع</h1>
-        <span class="chip">by OuissDev</span>
+        <span class="chip">By • OuissDev</span>
       </div>
       <nav class="tabs" id="groupTabs">
         <!-- buttons injected by JS -->
@@ -254,7 +262,7 @@
             ${t.ziel?'<span class="chip-badge ok">🎯 الهدف</span>':''}
             ${t.tasks?'<span class="chip-badge accent">🧩 توزيع المهام</span>':''}
           </div>
-          <div class="tags">🔖 ${highlight(t.points, q)}</div>
+          <div class="tags"> ${highlight(t.points, q)}</div>
           ${ (t.ziel_note||t.budget_note||t.tasks_note) ? `<p class="note">${buildNotes(t)}</p>` : ''}
         `;
         cardsEl.appendChild(card);
@@ -274,5 +282,3 @@
   </script>
 </body>
 </html>
-
-
